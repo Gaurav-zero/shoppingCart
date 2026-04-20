@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 import { useOutletContext } from "react-router";
 
 const Cart= () => {
-    const [cartItems, setCartItems]= useOutletContext();
+    const [cartItems, setCartItems, countItems, setCountItems]= useOutletContext();
 
     return (
         <div>

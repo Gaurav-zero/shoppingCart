@@ -1,6 +1,9 @@
 import { Link } from "react-router";
+import { useOutletContext } from "react-router";
 
 const NavBar = () => {
+    const [cartItems, setCartItems, countItems, setCountItems]= useOutletContext();
+
     return (
         <div>
             <nav>
@@ -10,7 +13,7 @@ const NavBar = () => {
                     </li>
 
                     <li>
-                        <Link to="/shopAndCart/cart">Cart</Link>
+                        <Link to="/shopAndCart/cart">Cart({countItems})</Link>
                     </li>
 
                     <li>

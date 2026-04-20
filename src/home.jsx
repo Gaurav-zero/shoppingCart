@@ -1,6 +1,8 @@
 import NavBar from "./NavBar";
+import { useOutletContext } from "react-router";
 
 const HomePage= () => {
+
     return (
         <div>
             <h1>Welcome to Gonker's Corner</h1>
