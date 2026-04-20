@@ -1,8 +1,9 @@
 import { useState } from "react";
 import NavBar from "./NavBar";
+import { useOutletContext } from "react-router";
 
 const Cart= () => {
-    const [cartItems, setCartItems]= useState(["shirts"]);
+    const [cartItems, setCartItems]= useOutletContext();
 
     return (
         <div>
