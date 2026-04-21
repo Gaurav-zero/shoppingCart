@@ -7,12 +7,16 @@ const Cards= ({ind}) => {
     const [price, setPrice]= useState("");
     const [imgUrl, setImgUrl]= useState("");
 
-    const [cartItems, setCartItems, countItems, setCountItems]= useOutletContext();
+    const[quantity, setQuantity]= useState(0);
+
+    const [cartItems, setCartItems, countItems, setCountItems, itemsQuantity, setItemsQuantity]= useOutletContext();
 
     const handleAddToCart= (e) =>{
         let newItems= [...cartItems, e.target.value];
+        let newQuantity= [...itemsQuantity, quantity];
         setCartItems(newItems);
-        setCountItems(countItems+1);
+        setItemsQuantity(newQuantity);
+        setCountItems(countItems+Number(quantity));
     }
 
     useEffect(() => {
@@ -32,7 +36,8 @@ const Cards= ({ind}) => {
             <h1>{title}</h1>
             <p>{desc}</p>
             <h2>${price}</h2>
-
+            
+            <input type="number" value={quantity} onChange={(e)=> setQuantity(e.target.value)} />
             <button value={title} onClick={handleAddToCart}>Add to Cart</button>
         </div>
     );

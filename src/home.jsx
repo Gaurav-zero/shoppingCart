@@ -2,6 +2,7 @@ import NavBar from "./NavBar";
 import { useOutletContext } from "react-router";
 
 const HomePage= () => {
+    //const [cartItems, setCartItems, countItems, setCountItems]= useOutletContext();
 
     return (
         <div>

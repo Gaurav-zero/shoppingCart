@@ -6,12 +6,9 @@ import Parent from "./ShopAndCart";
 const routes= [
     {
         path: "/",
-        element: <HomePage />,
-    },
-    {
-        path: "shopAndCart",
         element: <Parent />,
         children:[
+            { path: "/", element: <HomePage />},
             { path: "shop", element: <ShopPage /> },
             { path: "cart", element: <Cart />},
         ],
